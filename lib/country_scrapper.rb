@@ -5,18 +5,25 @@ require 'nokogiri'
 
 class Scraper
 
+  def initialize
+  end
 
    def get_page
-      doc = Nokogiri::HTML(open("https://www.lonelyplanet.com/best-in-travel/countries")
+      page = Nokogiri::HTML open("https://www.lonelyplanet.com/best-in-travel/countries")
+      doc = page.css(".marketing-article__content")
       doc
     end
 
     def countries
       countries = self.get_page.css("marketing_article_header").css("h1")
-      countries.each_with_index |country, index|
-        puts "#{index+1}. country"
-      end 
-  end
+      countries.each_with_index do |country, index|
+        puts "#{index+1}. #{country}"
+      end
+    end
+
+    def travel_infor
+
+    end
 
 
 end
