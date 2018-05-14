@@ -10,9 +10,12 @@ class Scraper
 
    def get_page
       page = Nokogiri::HTML open("https://www.lonelyplanet.com/best-in-travel/countries")
-      doc = page.css(".marketing-article__header").search("h1").text 
+      doc = page.css(".marketing-article__header")
+   # working ! 
+      doc.each do |country|
+        puts country.search("h1").text
+      end
 
-      doc
     end
 
     def countries
