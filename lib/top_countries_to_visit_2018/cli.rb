@@ -1,18 +1,18 @@
-# require "top_countries_to_visit_2018/version"
-# require_relative "../lib/scrapper.rb"
-# require_relative "..lib/cli.rb"
 
-Class TopCountriesToVisit2018::CLI
+require_relative "scraper.rb"
+
+
+class CLI
   attr_reader :scraper
-  attr_accessor :input 
+  attr_accessor :input
 
   def welcome
-    scraper = TopCountriesToVisit2018::Scraper.new
+    scraper = Scraper.new
     @scraper = scraper
     puts ""
     puts "Welcome to top 10 Countries to visit!"
     puts ""
-    @scraper.start
+    self.start
   end
 
   def start
@@ -20,9 +20,9 @@ Class TopCountriesToVisit2018::CLI
     puts "Here they are!"
     puts ""
     @scraper.list_countries
-    @scraper.get_input
-    @scraper.show_information
-    @scraper.next
+    self.get_input
+    self.show_information
+    self.next
   end
 
   def get_input
@@ -46,16 +46,16 @@ Class TopCountriesToVisit2018::CLI
 
     selection = gets.strip.to_i
     if selection == 1
-      @scraper.get_input
-      @scraper.show_information
-      @scraper.next
+      self.get_input
+      self.show_information
+      self.next
     elsif selection == 2
-      @scraper.start
+      self.start
     elsif selection == 3
       "Bon Voyage!"
     else
       puts "Please select a valid option 1, 2 or 3."
-      @scraper.next
+      self.next
     end
   end
 

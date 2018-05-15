@@ -1,7 +1,14 @@
 #!/usr/bin/env ruby
-
+require "require_all"
 require "bundler/setup"
-require "top_countries_to_visit_2018"
+# require 'top_countries_to_visit_2018'
+# require "./lib/top_countries_to_visit_2018 "
+# require '.lib/top_countries_to_visit_2018/version'
+# require '.lib/top_countries_to_visit_2018/cli.rb'
+# require '.lib/top_countries_to_visit_2018/scraper.rb'
+# require_relative '../lib/top_countries_to_visit_2018'
+require_all 'lib'
+
 
 
 # You can add fixtures and/or initialization code here to make experimenting
@@ -10,6 +17,9 @@ require "top_countries_to_visit_2018"
 # (If you use this, don't forget to add pry to your Gemfile!)
 # require "pry"
 # Pry.start
-
+require 'open-uri'
+require 'nokogiri'
+require 'pry'
 require "irb"
-IRB.start(__FILE__)
+IRB.start
+# (__FILE__)

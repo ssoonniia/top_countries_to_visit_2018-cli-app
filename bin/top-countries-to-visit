@@ -1,6 +1,0 @@
-#!/usr/bin/env ruby
-
-require "bundler/setup"
-require "lib/top_countries_to_visit_2018"
-
-TopCountriesToVisit2018::CLI.new.welcome

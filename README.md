@@ -1,8 +1,7 @@
 # TopCountriesToVisit2018
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/top_countries_to_visit_2018`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to top_countries_to_visit_2018 gem. This gem will show you a list of the top 10 Countries to visit in 2018. If a country is selected - it will detail why it is a great option for travel.  
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
