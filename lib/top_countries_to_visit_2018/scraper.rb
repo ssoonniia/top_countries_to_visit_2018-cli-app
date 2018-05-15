@@ -4,7 +4,7 @@ require 'pry'
 require 'nokogiri'
 attr_accessor :input
 
-# class TopCountriesToVisit2018::Scrapper
+# class TopCountriesToVisit2018::Scraper
 class Scraper
 
   def get_page
@@ -78,5 +78,5 @@ class Scraper
     end
   end
 
-  
+
 end
