@@ -2,3 +2,4 @@
 
 require_relative './top_countries_to_visit_2018/version'
 require_relative './top_countries_to_visit_2018/cli.rb'
+require_relative '.top_countries_to_visit_2018/scrapper.rb'
