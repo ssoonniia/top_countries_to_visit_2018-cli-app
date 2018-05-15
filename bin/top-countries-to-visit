@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+
+require './lib/top_countries_to_visit_2018'
