@@ -4,6 +4,7 @@ require 'pry'
 require 'nokogiri'
 attr_accessor :input
 
+# class TopCountriesToVisit2018::Scrapper
 class Scraper
 # to be removed - for IRB testing only
   def initialize
@@ -28,7 +29,7 @@ class Scraper
     info_array
   end
 
-# for testing only - will divide the below into different classes
+# for testing only - will divide the below into different CLI classes
   def welcome
     puts "Welcome to top 10 Countries to visit!"
     self.start
@@ -63,13 +64,13 @@ class Scraper
     if selection == 1
       self.get_input
       self.show_information
-      self.next 
+      self.next
     elsif selection == 2
       self.start
     else
       "Bon Voyage!"
     end
-end
+  end
 
 
 end
