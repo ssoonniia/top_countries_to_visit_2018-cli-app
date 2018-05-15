@@ -1,8 +1,7 @@
-
 require_relative "scraper.rb"
 
-
 class CLI
+
   attr_reader :scraper
   attr_accessor :input
 
@@ -52,7 +51,7 @@ class CLI
     elsif selection == 2
       self.start
     elsif selection == 3
-      "Bon Voyage!"
+      puts "Bon Voyage!"
     else
       puts "Please select a valid option 1, 2 or 3."
       self.next
