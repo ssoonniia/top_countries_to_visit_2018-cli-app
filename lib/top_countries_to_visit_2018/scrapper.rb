@@ -6,9 +6,6 @@ attr_accessor :input
 
 # class TopCountriesToVisit2018::Scrapper
 class Scraper
-# to be removed - for IRB testing only
-  def initialize
-  end
 
   def get_page
     page = Nokogiri::HTML open("https://www.lonelyplanet.com/best-in-travel/countries")
@@ -24,19 +21,23 @@ class Scraper
   def travel_information
     all_info = self.get_page.css(".marketing-article__content")
     info_array = all_info.collect do |info|
-      info.text
+      info.text.gsub(/^\s*/,'')
     end
     info_array
   end
 
 # for testing only - will divide the below into different CLI classes
   def welcome
+    puts ""
     puts "Welcome to top 10 Countries to visit!"
+    puts ""
     self.start
   end
 
   def start
+    puts ""
     puts "Here they are!"
+    puts ""
     self.list_countries
     self.get_input
     self.show_information
@@ -44,9 +45,11 @@ class Scraper
   end
 
   def get_input
+    puts ""
     puts "What number country would you like to see 1-10?"
       input = gets.strip.to_i
       @input = input
+    puts ""
   end
 
   def show_information
@@ -54,23 +57,24 @@ class Scraper
   end
 
   def next
+    puts ""
     puts "What would you like to do next?"
     puts "1. See information about another country?"
     puts "2. See the list of top 10 Countries to visit again?"
     puts "3. Or exit?"
 
     selection = gets.strip.to_i
-
     if selection == 1
       self.get_input
       self.show_information
       self.next
     elsif selection == 2
       self.start
-    elsif selection == "exit" || selection == 3
+    elsif selection == 3
       "Bon Voyage!"
     else
-      puts "Please select a valid option 1, 2 or 3"
+      puts "Please select a valid option 1, 2 or 3."
+      self.next
     end
   end
 
