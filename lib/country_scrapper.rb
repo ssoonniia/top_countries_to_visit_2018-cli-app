@@ -20,7 +20,11 @@ class Scraper
   end
 
   def travel_information
-      self.get_page.css(".marketing-article__content").text
+    all_info = self.get_page.css(".marketing-article__content")
+    info_array = all_info.collect do |info|
+      info.text
+    end
+    info_array
   end
 
 
