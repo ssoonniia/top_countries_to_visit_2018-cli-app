@@ -27,9 +27,11 @@ class Scraper
     end
     info_array
   end
-# for testing only - will divide the below into different classes 
+
+# for testing only - will divide the below into different classes
   def welcome
     puts "Welcome to top 10 Countries to visit!"
+    self.start
   end
 
   def start
@@ -56,15 +58,18 @@ class Scraper
     puts "2. See the list of top 10 Countries to visit again?"
     puts "3. Exit?"
 
-    selection = gets.stip.to_i
+    selection = gets.strip.to_i
 
     if selection == 1
-      self.start
-    elsif selction == 2
       self.get_input
-    else "Bon Voyage!"
-
-  end
+      self.show_information
+      self.next 
+    elsif selection == 2
+      self.start
+    else
+      "Bon Voyage!"
+    end
+end
 
 
 end
