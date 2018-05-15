@@ -1,5 +1,5 @@
-require "top_countries_to_visit_2018/version"
-require_relative "../lib/scrapper.rb"
+# require "top_countries_to_visit_2018/version"
+# require_relative "../lib/scrapper.rb"
 # require_relative "..lib/cli.rb"
 
 Class TopCountriesToVisit2018::CLI
