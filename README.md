@@ -22,7 +22,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Type the below and follow the prompts
+    $top_countries_to_visit_2018
 
 ## Development
 
