@@ -5,8 +5,8 @@ require 'nokogiri'
 
 class Scraper
 # to be removed - for IRB testing only
-  def initialize
-  end
+  # def initialize
+  # end
 
   def get_page
     page = Nokogiri::HTML open("https://www.lonelyplanet.com/best-in-travel/countries")
