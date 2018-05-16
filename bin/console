@@ -4,7 +4,6 @@ require "require_all"
 require "bundler/setup"
 require_all 'lib'
 
-
 # (If you use this, don't forget to add pry to your Gemfile!)
 # require "pry"
 # Pry.start
