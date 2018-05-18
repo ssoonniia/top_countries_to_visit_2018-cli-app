@@ -1,13 +1,8 @@
-require_relative "scraper.rb"
-
 class CLI
 
-  attr_reader :scraper
   attr_accessor :input
 
   def welcome
-    scraper = Scraper.new
-    @scraper = scraper
     puts ""
     puts "Welcome to top 10 Countries to visit!"
     puts ""
@@ -15,10 +10,9 @@ class CLI
   end
 
   def start
-    puts ""
     puts "Here they are!"
     puts ""
-    @scraper.list_countries
+    Scraper.list_countries
     self.get_input
     self.show_information
     self.next
@@ -33,7 +27,7 @@ class CLI
   end
 
   def show_information
-    puts @scraper.travel_information[@input-1]
+    puts Scraper.travel_information[@input-1]
   end
 
   def next

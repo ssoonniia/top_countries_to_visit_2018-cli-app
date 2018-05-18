@@ -5,18 +5,18 @@ require 'nokogiri'
 
 class Scraper
 
-  def get_page
+  def self.get_page
     page = Nokogiri::HTML open("https://www.lonelyplanet.com/best-in-travel/countries")
   end
 
-  def list_countries
+  def self.list_countries
     doc = self.get_page.css(".marketing-article__header")
       doc.each do |country|
         puts country.search("h1").text
       end
   end
 
-  def travel_information
+  def self.travel_information
     all_info = self.get_page.css(".marketing-article__content")
     info_array = all_info.collect do |info|
       info.text.gsub(/^\s*/,'')

@@ -1,16 +1,13 @@
 #!/usr/bin/env ruby
 
-require "require_all"
+require_relative '../lib/top_countries_to_visit_2018'
 require "bundler/setup"
-require_all 'lib'
+
 
 # (If you use this, don't forget to add pry to your Gemfile!)
 # require "pry"
 # Pry.start
-require 'open-uri'
-require 'nokogiri'
-require 'pry'
-require "irb"
+
 CLI.new.welcome
 
 # IRB.start(__FILE__)
