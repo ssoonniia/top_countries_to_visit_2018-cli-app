@@ -6,16 +6,16 @@ class CLI
     puts ""
     puts "Welcome to top 10 Countries to visit!"
     puts ""
-    self.start
+    start
   end
 
   def start
     puts "Here they are!"
     puts ""
     Scraper.list_countries
-    self.get_input
-    self.show_information
-    self.next
+    get_input
+    show_information
+    next_options
   end
 
   def get_input
@@ -30,25 +30,25 @@ class CLI
     puts Scraper.travel_information[@input-1]
   end
 
-  def next
+  def next_options
     puts ""
     puts "What would you like to do next?"
     puts "1. See information about another country?"
     puts "2. See the list of top 10 Countries to visit again?"
     puts "3. Or exit?"
 
-    selection = gets.strip.to_i
-    if selection == 1
-      self.get_input
-      self.show_information
-      self.next
-    elsif selection == 2
-      self.start
-    elsif selection == 3
+    @input = gets.strip.to_i
+    if @input == 1
+      get_input
+      show_information
+      next_options
+    elsif @input == 2
+      start
+    elsif @input == 3
       puts "Bon Voyage!"
     else
       puts "Please select a valid option 1, 2 or 3."
-      self.next
+      next_options
     end
   end
 
