@@ -21,8 +21,7 @@ class CLI
   def get_input
     puts ""
     puts "What number country would you like to see 1-10?"
-      input = gets.strip.to_i
-      @input = input
+      @input = gets.strip.to_i
     puts ""
   end
 
