@@ -5,8 +5,8 @@ class Country
   @@all = []
 
   def initialize(name, information)
-    @name =name
-    @information =information
+    @name = name
+    @information = information
   end
 
   def save

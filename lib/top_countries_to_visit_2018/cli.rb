@@ -13,16 +13,28 @@ class CLI
     puts ""
     puts "Here they are!"
     puts ""
-    Scraper.list_countries
+    list_countries
     get_input
+  end
+# update
+  def list_countries
+    Country.all.each do |place|
+         puts "#{place.name}"
+    end
+  end
+
+  def travel_information
+
+    country_selected = Country.all[@input-1]
+    puts country_selected.information
   end
 
   def get_input
     puts ""
-    puts "What number country would you like to see 1-10?"
+    puts "What number country would you like to see 1- #{Country.all.size}?"
     puts ""
-    @input = gets.strip.to_i
-      if @input <= Country.all.size
+    self.input = gets.strip.to_i
+      if input.between?(1, Country.all.size)
         show_information
       else
         puts "Please make a valid selection"
@@ -32,7 +44,7 @@ class CLI
 
   def show_information
     puts ""
-    puts Scraper.travel_information(@input-1)
+    puts travel_information
     next_options
   end
 
@@ -44,14 +56,14 @@ class CLI
     puts "3. Or exit?"
     puts ""
 
-    @input = gets.strip.to_i
-      if @input == 1
+    input = gets.strip.to_i
+      if input == 1
         get_input
         show_information
         next_options
-      elsif @input == 2
+      elsif input == 2
         start
-      elsif @input == 3
+      elsif input == 3
         puts ""
         puts "Bon Voyage!"
       else

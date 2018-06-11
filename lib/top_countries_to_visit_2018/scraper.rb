@@ -1,7 +1,3 @@
-require 'open-uri'
-require 'pry'
-require 'nokogiri'
-
 class Scraper
 
   def self.get_page
@@ -17,15 +13,6 @@ class Scraper
       end
   end
 
-  def self.list_countries
-    Country.all.each do |place|
-         puts "#{place.name}"
-    end
-  end
 
-  def self.travel_information(input)
-    country_selected = Country.all[input]
-    puts country_selected.information
-  end
 
 end
